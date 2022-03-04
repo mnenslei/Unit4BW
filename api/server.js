@@ -1,17 +1,18 @@
 const express = require('express')
 const helmet = require('helmet')
 const cors = require('cors')
-const db = require('./data/db-config')
+const router = require('./router')
 
 //Server
 
 const server = express()
+
 server.use(express.json())
 server.use(helmet())
 server.use(cors())
 
 //Routes
-
+server.use('/api', router);
 
 //Error handling
 
